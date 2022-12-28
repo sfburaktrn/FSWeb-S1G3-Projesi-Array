@@ -40,10 +40,12 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
-}
+function kopyala(dizi){
+var brk = dizi.slice(0);
 
+return brk ;
+}
+console.log(kopyala(orijinalTatlar));
 
 /* Görev 2:
 Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları kabul etmelidir:
@@ -55,10 +57,14 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 Örneğin: dizi25Cesit(orijinalTatlar) kodunuz düzgün çalışıyorsa true değerini döndürür.
 */
 
-
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+function dizi25Cesitmi(sbt){
+  if (sbt.length === 25){
+    return true;
+  } else {
+    return false;
+  }
 }
+console.log(dizi25Cesitmi(orijinalTatlar));
 
 
 /* Görev 3:
@@ -74,10 +80,12 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
-}
+function cesitEkle(tatlarim,yenitatlarim){
+  tatlarim.unshift(yenitatlarim)
 
+  return tatlarim ;
+}
+console.log(cesitEkle(orijinalTatlar,"Kakule"));
 
 /* Cörev 4:
 
@@ -92,10 +100,12 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
-}
+function sonCesitiKaldir(terxo){
+  terxo.pop()
 
+  return terxo ;
+}
+console.log(sonCesitiKaldir(orijinalTatlar));
 
 /* Görev 5:
 Dizideki belirli bir indeksteki çeşniyi döndüren bir işlev yazın.
@@ -108,10 +118,12 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
-}
+function indekstekiCesitiGetir(frk,brkindex){
 
+return frk[brkindex];
+  
+}
+console.log(indekstekiCesitiGetir(orijinalTatlar,6))
 
 /* Görev 6:
 
@@ -128,10 +140,19 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
-}
+function ismeGoreCesitCikar(tatlim,aci){
+for (let i = 0; i< tatlim.length; i++){
 
+  if (tatlim[i] === aci) {
+
+    tatlim.splice(i,1);
+  }
+   
+}
+return tatlim;
+
+}
+console.log(ismeGoreCesitCikar(orijinalTatlar, "Tarçın"));
 
 /* Görev 7:
 
@@ -154,11 +175,20 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreFiltrele(terxs,filtre){
+let trn=[];
+  for (let i = 0; i<terxs.length; i++){
+
+  if(terxs[i].includes(filtre)){
+   trn.push(terxs[i]);
+  }
+}
+return trn;
 }
 
 
+
+console.log(ismeGoreFiltrele(orijinalTatlar, "Limon"));
 
 /* ALIŞTIRMA */
 
